@@ -2,6 +2,10 @@ name: Build and Push Big Packages
 
 on:
   push:
+    paths:
+      - "modules/**"
+      - "flake.nix"
+      - "flake.lock"
 
 jobs:
   nix-matrix:
