@@ -1,4 +1,10 @@
-{ self, inputs, ... }: {
+{ self, inputs, ... }:
+let
+  system = "x86_64-linux";
+in
+{
+  flake.packages.${system}.quickshell-niri = inputs.qml-niri.packages.${system}.quickshell;
+
   flake.nixosModules.niri = { pkgs, lib, ... }: {
     imports = [
       self.nixosModules.wm-common
@@ -29,7 +35,7 @@
         quickshell = {
           enable = true;
           systemd.enable = true;
-          package = inputs.qml-niri.packages.${pkgs.stdenv.hostPlatform.system}.quickshell;
+          package = self.packages.quickshell-niri;
           activeConfig = "new";
         };
       };
