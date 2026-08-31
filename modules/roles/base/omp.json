@@ -1,0 +1,99 @@
+{
+  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "blocks": [
+    {
+      "type": "prompt",
+      "alignment": "left",
+      "segments": [
+        {
+          "properties": {
+            "display_host": true
+          },
+          "template": "<red>\u250c\u2500\u2500(</>{{ .UserName }} \udb84\udd05 {{ .HostName }}<red>)</>",
+          "foreground": "lightWhite",
+          "type": "session",
+          "style": "plain"
+        },
+        {
+          "properties": {
+            "fetch_version": false,
+            "fetch_virtual_env": true
+          },
+          "template": "<red>-[</>\ue235 {{ if .Error }}{{ .Error }}{{ else }}{{ if .Venv }}{{ .Venv }}{{ end }}{{ .Full }}{{ end }}<red>]</>",
+          "foreground": "yellow",
+          "type": "python",
+          "style": "plain"
+        },
+        {
+          "properties": {
+            "folder_separator_icon": "<#c0c0c0>/</>",
+            "style": "full"
+          },
+          "template": "<red>-[</>{{ .Path }}<red>]</>",
+          "foreground": "lightWhite",
+          "type": "path",
+          "style": "plain"
+        },
+        {
+          "template": "<red>-[</>{{ .HEAD }}<red>]</>",
+          "foreground": "white",
+          "type": "git",
+          "style": "plain"
+        },
+        {
+          "type": "kubectl",
+          "style": "plain",
+          "foreground": "white",
+          "template": "<red>-[</>{{if .Namespace}}󱃾 {{.Namespace}}{{end}}<red>]</>",
+          "include_folders": ["~/Servers/?.*"]
+        },
+        {
+          "type": "nix-shell",
+          "style": "plain",
+          "foreground": "white",
+          "template": "{{ if ne .Type \"unknown\" }}<red>-[</>󱄅 {{.Type}}<red>]</>{{ end }}"
+        }
+      ]
+    },
+    {
+      "type": "prompt",
+      "alignment": "right",
+      "segments": [
+        {
+          "properties": {
+            "always_enabled": true,
+            "style": "round"
+          },
+          "template": " {{ .FormattedMs }} ",
+          "foreground": "white",
+          "type": "executiontime",
+          "style": "plain"
+        },
+        {
+          "properties": {
+            "always_enabled": true
+          },
+          "template": " {{ if gt .Code 0 }}<white>({{ .Code }})</> \u2a2f{{else}}✓{{ end }} ",
+          "foreground": "#89FF36",
+          "type": "exit",
+          "style": "plain",
+          "foreground_templates": ["{{ if gt .Code 0 }}red{{ end }}"]
+        }
+      ]
+    },
+    {
+      "type": "prompt",
+      "alignment": "left",
+      "segments": [
+        {
+          "template": "<red>\u2514\u2500</>$ ",
+          "foreground": "lightWhite",
+          "type": "text",
+          "style": "plain"
+        }
+      ],
+      "newline": true
+    }
+  ],
+  "version": 3
+}
