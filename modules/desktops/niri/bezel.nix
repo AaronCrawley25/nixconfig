@@ -1,7 +1,4 @@
 { self, inputs, ... }:
-let
-  system = "x86_64-linux";
-in
 {
   flake.nixosModules.niri =
     { pkgs, lib, ... }:
@@ -46,6 +43,4 @@ in
         };
       };
     };
-
-  flake.packages.${system}.bezel = inputs.bezel.packages.${system}.default;
 }
