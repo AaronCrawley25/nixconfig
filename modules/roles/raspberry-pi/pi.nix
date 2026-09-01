@@ -12,7 +12,7 @@
       imports = with nixos-raspberrypi.nixosModules; [
         nixos-raspberrypi.lib.inject-overlays
         raspberry-pi-5.base
-        raspberry-pi-5.page-size-16k
+        # raspberry-pi-5.page-size-16k
       ];
 
       boot.loader.raspberry-pi.bootloader = "kernel";
