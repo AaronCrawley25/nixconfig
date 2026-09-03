@@ -1,6 +1,6 @@
 { self, inputs, ... }: {
-  flake.nixosConfigurations.zavala = inputs.self.lib.mkHost {
-    hostname = "zavala";
+  flake.nixosConfigurations.zavala2 = inputs.self.lib.mkHost {
+    hostname = "zavala2";
     username = "aaron";
     gitname = "Aaron Crawley";
     gitemail = "aaron.crawley@outlook.com.au";

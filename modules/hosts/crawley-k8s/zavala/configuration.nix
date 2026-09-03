@@ -1,6 +1,6 @@
 { self, inputs, ... }:
 {
-  flake.nixosModules.zavala =
+  flake.nixosModules.zavala2 =
     { pkgs, lib, ... }:
     {
       services.k3s = {
