@@ -5,6 +5,7 @@
       kubectx
       argocd
       pv-migrate
+      kubectl-cnpg
     ];
 
     virtualisation.docker = {

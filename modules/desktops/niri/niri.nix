@@ -30,7 +30,7 @@
         quickshell = {
           enable = true;
           systemd.enable = true;
-          package = self.packages.quickshell-niri;
+          package = self.packages."x86_64-linux".quickshell-niri;
           activeConfig = "new";
         };
       };
