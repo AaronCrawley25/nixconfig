@@ -1,10 +1,10 @@
 { self, inputs, ... }:
 {
-  flake.nixosModules.zavala2 =
+  flake.nixosModules.zavala =
     { pkgs, lib, ... }:
     {
       services.k3s = {
-        serverAddr = "https://10.9.8.7:6443";
+        serverAddr = "https://10.9.8.82:6443";
         tokenFile = "/var/lib/rancher/k3s/token";
       };
 
