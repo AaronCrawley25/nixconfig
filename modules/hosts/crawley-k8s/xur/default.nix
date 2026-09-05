@@ -8,6 +8,7 @@
     modules = [
       self.nixosModules.bootRegular
       self.nixosModules.server
+      self.nixosModules.k3s-agent
     ];
   };
 }
