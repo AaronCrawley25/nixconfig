@@ -13,21 +13,25 @@
       };
 
       networking.firewall.allowedTCPPorts = [
-        2379
-        2380
-        6443
-        10250
+        2379 # etcd
+        2380 # etcd
+        6443 # api server
+        10250 # metrics
 
-        80
-        443
-        53
-        853
+        2381 # etcd metrics
+        10257 # kube-controller-manager metrics
+        10259 # kube-scheduler metrics
+
+        80 # http lb
+        443 # https lb
+        53 # dns lb
+        853 # dot lb
       ];
 
       networking.firewall.allowedUDPPorts = [
-        8472
-        51820
-        51821
+        8472 # flannel
+        51820 # flannel
+        51821 # flannel
       ];
 
       environment.systemPackages = with pkgs; [
