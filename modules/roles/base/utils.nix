@@ -20,6 +20,16 @@
         fzf
 
         (pkgs.writeShellScriptBin "trim-generations" (builtins.readFile ./trim-generations.sh))
+
+        (pkgs.writeShellApplication {
+          name = "oopdate";
+
+          runtimeInputs = with pkgs; [
+            gum
+          ];
+
+          text = builtins.readFile ./oopdate.sh;
+        })
       ];
     };
 }
