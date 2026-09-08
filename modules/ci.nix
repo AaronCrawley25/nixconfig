@@ -10,8 +10,6 @@
 
   flake.packages."aarch64-linux".linux_rpi5 =
     inputs.nixos-raspberrypi.packages."aarch64-linux".linux_rpi5;
-  flake.packages."aarch64-linux".linuxPackages_rpi5 =
-    inputs.nixos-raspberrypi.packages."aarch64-linux".linuxPackages_rpi5;
   flake.packages."aarch64-linux".raspberrypi-utils =
     inputs.nixos-raspberrypi.packages."aarch64-linux".raspberrypi-utils;
   flake.packages."aarch64-linux".raspberrypi-udev-rules =
