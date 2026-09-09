@@ -1,6 +1,5 @@
 # Do a "system update" by pulling nixconfig and rebuilding
 # TODO: gum spinners for long running tasks
-gum confirm "Update System?" || exit 1
 
 # Pull new version of nixconfig
 if gum confirm "Pull Changes from Git?"; then
@@ -9,10 +8,10 @@ if gum confirm "Pull Changes from Git?"; then
 fi
 
 REBUILD_OPTION=$(gum choose "switch" "boot" "test")
-sudo nixos-rebuild "$REBUILD_OPTION" || exit 1
+sudo nixos-rebuild "$REBUILD_OPTION"
 
 if gum confirm "Trim Generations?"; then
-    yes | sudo trim-generations
+    yes | sudo trim-generations || : # optionally: EXITCODE=$?
 fi
 
 if gum confirm "Collect Garbage?"; then
