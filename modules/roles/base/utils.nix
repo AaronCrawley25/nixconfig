@@ -31,5 +31,16 @@
           text = builtins.readFile ./oopdate.sh;
         })
       ];
+
+      home = {
+        xdg.desktopEntries.oopdate = {
+          name = "oopdate";
+          exec = "oopdate";
+          terminal = true;
+          type = "Application";
+          categories = [ "Utility" ];
+          icon = "nix-snowflake";
+        };
+      };
     };
 }
