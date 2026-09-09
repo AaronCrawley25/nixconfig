@@ -18,7 +18,8 @@
       ];
 
       configFile = {
-        kdeglobals."General"."TerminalApplication" = "${pkgs.kitty}";
+        kdeglobals."General"."TerminalApplication" = "kitty";
+        kdeglobals."General"."TerminalService" = "kitty.desktop";
       };
     };
   };
