@@ -33,5 +33,7 @@
     };
 
     hardware.xpadneo.enable = true;
+
+    virtualisation.waydroid.enable = true;
   };
 }
