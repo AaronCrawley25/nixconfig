@@ -4,7 +4,7 @@
 # Pull new version of nixconfig
 if gum confirm "Pull Changes from Git?"; then
     cd /etc/nixos
-    git pull
+    git pull || :
 fi
 
 REBUILD_OPTION=$(gum choose "switch" "boot" "test")
@@ -15,6 +15,6 @@ if gum confirm "Trim Generations?"; then
 fi
 
 if gum confirm "Collect Garbage?"; then
-    nix-store --gc
+    sudo nix-store --gc
 fi
 
