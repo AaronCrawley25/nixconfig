@@ -1,10 +1,16 @@
 # Do a "system update" by pulling nixconfig and rebuilding
 # TODO: gum spinners for long running tasks
 
+pause_on_exit() {
+    read -n 1 -s -r -p "Press any key to continue"
+}
+
+trap pause_on_exit EXIT
+
 # Pull new version of nixconfig
 if gum confirm "Pull Changes from Git?"; then
     cd /etc/nixos
-    git pull || :
+    git pull
 fi
 
 REBUILD_OPTION=$(gum choose "switch" "boot" "test")
