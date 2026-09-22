@@ -20,6 +20,7 @@
       hardware.nvidia = {
         # enabled = true;
         open = true;
+        powerManagement.enable = true;
       };
 
       # Cachyos kernel for gamering
