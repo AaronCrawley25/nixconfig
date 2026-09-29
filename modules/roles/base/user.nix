@@ -16,6 +16,7 @@
         useUserPackages = true;
         useGlobalPkgs = true;
         backupFileExtension = "bak";
+        overwriteBackup = true;
         extraSpecialArgs = {
           inherit inputs;
         };

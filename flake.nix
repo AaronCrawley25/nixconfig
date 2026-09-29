@@ -19,23 +19,14 @@
       url = "github:AaronCrawley25/nixvim";
     };
 
+    noctalia.url = "github:noctalia-dev/noctalia";
+
     silentSDDM = {
       url = "github:uiriansan/SilentSDDM";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
-
-    quickshell = {
-      url = "github:quickshell-mirror/quickshell/v0.3.0";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    qml-niri = {
-      url = "github:imiric/qml-niri/main";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.quickshell.follows = "quickshell";
-    };
 
     bezel = {
       url = "github:Indra55/bezel";
@@ -63,11 +54,13 @@
       "https://attic.xuyh0120.win/lantian"
       "https://nixos-raspberrypi.cachix.org"
       "https://crawleynix.cachix.org"
+      "https://noctalia.cachix.org"
     ];
     extra-trusted-public-keys = [
       "lantian:EeAUQ+W+6r7EtwnmYjeVwx5kOGEBpjlBfPlzGlTNvHc="
       "nixos-raspberrypi.cachix.org-1:4iMO9LXa8BqhU+Rpg6LQKiGa2lsNh/j2oiYLNOQ5sPI="
       "crawleynix.cachix.org-1:ya3CVeV/ZN/ZnoXjy0RkhK4Yet3cVQwn3JUEvKWaQZw="
+      "noctalia.cachix.org-1:pCOR47nnMEo5thcxNDtzWpOxNFQsBRglJzxWPp3dkU4="
     ];
   };
 

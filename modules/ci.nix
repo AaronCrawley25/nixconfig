@@ -3,7 +3,6 @@
   flake.githubActions = inputs.nix-github-actions.lib.mkGithubMatrix { checks = self.packages; };
 
   # Build some flake packages that aren't cached anywhere
-  flake.packages."x86_64-linux".quickshell-niri = inputs.qml-niri.packages."x86_64-linux".quickshell;
   flake.packages."x86_64-linux".bezel = inputs.bezel.packages."x86_64-linux".default;
   flake.packages."x86_64-linux".lzbt = inputs.lanzaboote.packages."x86_64-linux".lzbt;
   flake.packages."x86_64-linux".stub = inputs.lanzaboote.packages."x86_64-linux".stub;
