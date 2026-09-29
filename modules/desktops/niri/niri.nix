@@ -28,6 +28,7 @@
     home = {
       services = {
         udiskie.enable = true;
+        kanshi.enable = true;
       };
     };
   };
