@@ -5,7 +5,7 @@
     ];
 
     environment.sessionVariables = {
-      TERMINAL = "${pkgs.kitty}";
+      TERMINAL = "kitty";
     };
 
     home = {
