@@ -39,6 +39,11 @@
               launcher_placement = "attached";
               clipboard_placement = "attached";
               polkit_placement = "attached";
+              open_near_click_control_center = true;
+              open_near_click_launcher = true;
+              open_near_click_clipboard = true;
+              open_near_click_wallpaper = true;
+              open_near_click_session = true;
             };
           };
 
@@ -82,6 +87,10 @@
 
             active_window = {
               display = "text_only";
+              show_empty_label = true;
+              min_length = 0;
+              max_length = 400;
+              title_scroll = "on_hover";
             };
 
             clock.format = " {:%-H:%M %p}";
@@ -89,10 +98,15 @@
             control-center.glyph = "settings";
 
             privacy.hide_inactive = true;
+
+            media = {
+              hide_when_no_media = true;
+              max_length = 350;
+              title_scroll = "on_hover";
+            };
           };
 
           location = {
-            enabled = true;
             auto_locate = true;
           };
 
@@ -102,11 +116,69 @@
 
           notification = {
             position = "bottom_right";
-            offset_x = 12;
-            offset_y = 12;
+            offset_x = 16;
+            offset_y = 16;
+            follow_focused_output = true;
           };
 
           wallpaper.directory = "~/Pictures/Wallpapers";
+
+          idle = {
+            behavior = {
+              behavior_order = [
+                "lock"
+                "screen-off"
+                "suspend"
+              ];
+
+              pre_action_fade_seconds = 2.0;
+
+              lock = {
+                timeout = 600;
+                action = "lock";
+                enabled = true;
+              };
+
+              screen-off = {
+                timeout = 660;
+                action = "screen_off";
+                enabled = true;
+              };
+
+              suspend = {
+                timeout = 900;
+                action = "lock_and_suspend";
+                enabled = true;
+              };
+            };
+          };
+
+          osd = {
+            offset_y = 16;
+          };
+
+          desktop_widgets.enabled = false;
+
+          # TODO: re-enable when dock opens new instead of raise
+          # dock = {
+          #   enabled = true;
+          #   auto_hide = false;
+          #   smart_auto_hide = true;
+          #   reserve_space = false;
+          #   show_running = false;
+          #   show_instance_count = false;
+          #   pinned = [
+          #     "firefox"
+          #     "kitty"
+          #     "nvim"
+          #   ];
+          # };
+
+          plugins = {
+            enabled = [
+              "noctalia/notes"
+            ];
+          };
         };
       };
 

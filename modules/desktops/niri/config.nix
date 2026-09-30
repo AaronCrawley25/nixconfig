@@ -145,6 +145,8 @@
               spawn-sh = "noctalia msg panel-toggle notification";
             };
             "Mod+Period".spawn-sh = "noctalia msg panel-toggle launcher /emo";
+            "Mod+Semicolon".spawn-sh = "noctalia msg panel-toggle noctalia/notes:panel";
+            "Mod+Slash".spawn-sh = "noctalia msg panel-toggle launcher /";
             "Mod+N" = {
               _props.hotkey-overlay-title = "Open Neovim";
               spawn = [
@@ -311,7 +313,6 @@
             "Mod+BracketRight".consume-or-expel-window-right = { };
 
             "Mod+Comma".set-column-width = "50%";
-            "Mod+Slash".center-column = { };
             "Mod+Shift+Period".expand-column-to-available-width = { };
 
             "Mod+Ctrl+Shift+R".switch-preset-window-height = { };
