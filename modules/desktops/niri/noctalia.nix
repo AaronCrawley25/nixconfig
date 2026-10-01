@@ -31,9 +31,25 @@
 
           shell = {
             font_family = "CaskaydiaCove NF";
-            launcher.compact = true;
             polkit_agent = true;
             niri_overview_type_to_launch_enabled = true;
+
+            launcher = {
+              compact = true;
+
+              dmenu.entry.ssh = {
+                command = ''
+                  grep -v '^|1|' ~/.ssh/known_hosts | cut -d' ' -f1 | tr ',' '\n' \
+                    | sed -E 's/^\[([^]]+)\]:[0-9]+$/\1/' \
+                    | grep -Ev '^([0-9]{1,3}\.){3}[0-9]{1,3}$|:' \
+                    | sort -u
+                '';
+                exec = "kitty kitten ssh {selection}";
+                prefix = "ssh";
+                glyph = "server";
+                global = false;
+              };
+            };
 
             panel = {
               launcher_placement = "attached";
@@ -52,7 +68,7 @@
             margin_edge = 8;
             font_family = "CaskaydiaCove NF";
             font_scale = 0.95;
-            widget_spacing = 8;
+            widget_spacing = 6;
             capsule = true;
             capsule_padding = 10;
 
@@ -101,7 +117,7 @@
 
             media = {
               hide_when_no_media = true;
-              max_length = 350;
+              max_length = 300;
               title_scroll = "on_hover";
             };
           };
@@ -115,8 +131,9 @@
           };
 
           notification = {
-            position = "bottom_right";
-            offset_x = 16;
+            position = "top_center";
+            # position = "bottom_right";
+            # offset_x = 16;
             offset_y = 16;
             follow_focused_output = true;
           };

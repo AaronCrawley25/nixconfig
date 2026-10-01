@@ -111,53 +111,27 @@
                 place-within-backdrop = true;
               };
             }
+            { spawn-at-startup._args = [ "spotify" ]; }
+            { spawn-sh-at-startup._args = [ "niri msg action focus-workspace 2" ]; }
           ];
 
           binds = {
-            "Mod+Shift+Slash".show-hotkey-overlay = { };
-
-            "Mod+Q" = {
-              _props.hotkey-overlay-title = "Open a Terminal: kitty";
-              spawn = [ "kitty" ];
-            };
-            "Mod+Return" = {
-              _props.hotkey-overlay-title = "Open a Browser: firefox";
-              spawn = [ "firefox" ];
-            };
-            "Mod+R" = {
-              _props.hotkey-overlay-title = "Open Noctalia launcher";
-              spawn-sh = "noctalia msg panel-toggle launcher";
-            };
-            "Mod+X" = {
-              _props.hotkey-overlay-title = "Open Noctalia power menu";
-              spawn-sh = "noctalia msg panel-toggle session";
-            };
-            "Mod+I" = {
-              _props.hotkey-overlay-title = "Open Noctalia settings menu";
-              spawn-sh = "noctalia msg panel-toggle control-center";
-            };
-            "Mod+V" = {
-              _props.hotkey-overlay-title = "Open Noctalia settings menu";
-              spawn-sh = "noctalia msg panel-toggle clipboard";
-            };
-            "Mod+A" = {
-              _props.hotkey-overlay-title = "Open Noctalia notifications";
-              spawn-sh = "noctalia msg panel-toggle notification";
-            };
+            "Mod+Q".spawn = [ "kitty" ];
+            "Mod+Return".spawn = [ "firefox" ];
+            "Mod+R".spawn-sh = "noctalia msg panel-toggle launcher";
+            "Mod+X".spawn-sh = "noctalia msg panel-toggle session";
+            "Mod+I".spawn-sh = "noctalia msg panel-toggle control-center";
+            "Mod+V".spawn-sh = "noctalia msg panel-toggle clipboard";
+            "Mod+A".spawn-sh = "noctalia msg panel-toggle notification";
             "Mod+Period".spawn-sh = "noctalia msg panel-toggle launcher /emo";
+            "Mod+S".spawn-sh = "noctalia msg panel-toggle launcher /ssh";
             "Mod+Semicolon".spawn-sh = "noctalia msg panel-toggle noctalia/notes:panel";
             "Mod+Slash".spawn-sh = "noctalia msg panel-toggle launcher /";
-            "Mod+N" = {
-              _props.hotkey-overlay-title = "Open Neovim";
-              spawn = [
-                "kitty"
-                "nvim"
-              ];
-            };
-            "Mod+E" = {
-              _props.hotkey-overlay-title = "Open Nautilus";
-              spawn = [ "nautilus" ];
-            };
+            "Mod+E".spawn = [ "nautilus" ];
+            "Mod+N".spawn = [
+              "kitty"
+              "nvim"
+            ];
 
             "XF86AudioRaiseVolume" = {
               _props.allow-when-locked = true;
@@ -195,21 +169,11 @@
 
             "XF86MonBrightnessUp" = {
               _props.allow-when-locked = true;
-              spawn = [
-                "brightnessctl"
-                "--class=backlight"
-                "set"
-                "+10%"
-              ];
+              spawn-sh = "noctalia msg brightness-up 5";
             };
             "XF86MonBrightnessDown" = {
               _props.allow-when-locked = true;
-              spawn = [
-                "brightnessctl"
-                "--class=backlight"
-                "set"
-                "10%-"
-              ];
+              spawn-sh = "noctalia msg brightness-down 5";
             };
 
             "Mod+Tab" = {
@@ -333,17 +297,14 @@
             "Print".screenshot = { };
             "Mod+Shift+S".screenshot = { };
             "Ctrl+Print".screenshot-screen = { };
+            "Mod+Ctrl+S".screenshot-screen = { };
             "Alt+Print".screenshot-window = { };
+            "Mod+Alt+S".screenshot-window = { };
 
             "Mod+Escape" = {
               _props.allow-inhibiting = false;
               toggle-keyboard-shortcuts-inhibit = { };
             };
-
-            "Mod+Shift+E".quit = { };
-            "Ctrl+Alt+Delete".quit = { };
-
-            "Mod+Shift+P".power-off-monitors = { };
           };
         };
 
