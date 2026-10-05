@@ -33,6 +33,7 @@
             font_family = "CaskaydiaCove NF";
             polkit_agent = true;
             niri_overview_type_to_launch_enabled = true;
+            greeter_sync.auto_sync = true;
 
             launcher = {
               compact = true;

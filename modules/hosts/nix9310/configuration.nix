@@ -5,6 +5,7 @@
       pkgs,
       lib,
       config,
+      username,
       ...
     }:
     let
@@ -59,6 +60,22 @@
             path = "/dev/input/by-path/pci-0000:00:15.1-platform-i2c_designware.1-event-mouse";
           };
         };
+      };
+
+      programs.silentSDDM.enable = lib.mkForce false;
+
+      services.displayManager.noctalia-greeter = {
+        enable = true;
+        settings = {
+          cursor.size = 24;
+          keyboard.layout = "us";
+          appearance.hide_logo = true;
+          auth.allow_empty_password = true;
+        };
+        cursorTheme = {
+          name = "Adwaita";
+        };
+        passwordlessSyncUsers = [ "${username}" ];
       };
 
       system.stateVersion = "25.11";
