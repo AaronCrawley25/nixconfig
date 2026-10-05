@@ -34,9 +34,9 @@
               };
 
               top = {
-                left = mkCmd "qs ipc call player previous";
-                right = mkCmd "qs ipc call player next";
-                tap = mkCmd "qs ipc call player playpause";
+                left = mkCmd "${pkgs.playerctl}/bin/playerctl previous";
+                right = mkCmd "${pkgs.playerctl}/bin/playerctl next";
+                tap = mkCmd "${pkgs.playerctl}/bin/playerctl play-pause";
               };
             };
           };
