@@ -197,6 +197,7 @@
               "noctalia/notes"
               "noctalia/wallhaven"
               "noctalia/timer"
+              "noctalia/kaomoji"
             ];
           };
         };

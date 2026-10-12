@@ -127,6 +127,8 @@
             "Mod+S".spawn-sh = "noctalia msg panel-toggle launcher '/ssh '";
             "Mod+Semicolon".spawn-sh = "noctalia msg panel-toggle noctalia/notes:panel";
             "Mod+Slash".spawn-sh = "noctalia msg panel-toggle launcher /";
+            "Mod+W".spawn-sh = "noctalia msg panel-toggle wallpaper";
+            "Mod+Shift+W".spawn-sh = "noctalia msg panel-toggle noctalia/wallhaven:browser";
             "Mod+E".spawn = [ "nautilus" ];
             "Mod+N".spawn = [
               "kitty"
@@ -291,8 +293,6 @@
             "Mod+Alt+L".set-column-width = "+10%";
             "Mod+Alt+K".set-window-height = "-10%";
             "Mod+Alt+J".set-window-height = "+10%";
-
-            "Mod+W".toggle-column-tabbed-display = { };
 
             "Print".screenshot = { };
             "Mod+Shift+S".screenshot = { };
