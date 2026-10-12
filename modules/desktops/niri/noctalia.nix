@@ -195,6 +195,8 @@
           plugins = {
             enabled = [
               "noctalia/notes"
+              "noctalia/wallhaven"
+              "noctalia/timer"
             ];
           };
         };
