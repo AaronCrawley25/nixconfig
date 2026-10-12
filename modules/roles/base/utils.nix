@@ -20,6 +20,7 @@
         fzf
         htop
         btop
+        nix-tree
 
         (pkgs.writeShellScriptBin "trim-generations" (builtins.readFile ./trim-generations.sh))
 
