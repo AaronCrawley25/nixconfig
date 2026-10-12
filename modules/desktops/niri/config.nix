@@ -79,8 +79,8 @@
                 };
                 open-floating = true;
                 default-floating-position._props = {
-                  x = 10;
-                  y = 10;
+                  x = 16;
+                  y = 16;
                   relative-to = "bottom-right";
                 };
               };
@@ -91,7 +91,7 @@
                 match._props.app-id = "org.gnome.Calculator$";
                 open-floating = true;
                 default-floating-position._props = {
-                  x = 10;
+                  x = 16;
                   y = 0;
                   relative-to = "right";
                 };

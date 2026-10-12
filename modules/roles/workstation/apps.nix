@@ -17,6 +17,7 @@
     services = {
       udisks2.enable = true;
       upower.enable = true;
+      avahi.enable = true;
     };
 
     home = {

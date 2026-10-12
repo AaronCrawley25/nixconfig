@@ -7,6 +7,7 @@
       snapshot
       file-roller
       eog
+      gnome-network-displays
     ];
   };
 }
