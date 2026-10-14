@@ -57,7 +57,7 @@
       home = {
         services.bezel.config = {
           device = {
-            path = "/dev/input/by-path/pci-0000:00:15.1-platform-i2c_designware.1-event-mouse";
+            path = "DLL09FF:01 06CB:CE39 Touchpad";
           };
         };
       };

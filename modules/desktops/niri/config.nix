@@ -279,13 +279,17 @@
             "Mod+BracketRight".consume-or-expel-window-right = { };
 
             "Mod+Comma".set-column-width = "50%";
-            "Mod+Shift+Period".expand-column-to-available-width = { };
+            "Mod+Shift+Comma".switch-preset-column-width = { };
 
             "Mod+Ctrl+Shift+R".switch-preset-window-height = { };
             "Mod+Ctrl+R".reset-window-height = { };
 
             "Mod+M".maximize-column = { };
+            "Mod+Shift+M".expand-column-to-available-width = { };
+
             "Mod+F".fullscreen-window = { };
+            "Mod+Shift+F".toggle-windowed-fullscreen = { };
+            "Mod+Ctrl+F".toggle-window-floating = { };
 
             "Mod+Ctrl+C".center-visible-columns = { };
 

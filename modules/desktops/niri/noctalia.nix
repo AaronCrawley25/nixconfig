@@ -62,6 +62,8 @@
               open_near_click_wallpaper = true;
               open_near_click_session = true;
             };
+
+            lockscreen.allow_empty_password = true;
           };
 
           bar.default = {
