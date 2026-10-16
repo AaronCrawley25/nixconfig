@@ -6,6 +6,7 @@
   flake.packages."x86_64-linux".bezel = inputs.bezel.packages."x86_64-linux".default;
   flake.packages."x86_64-linux".lzbt = inputs.lanzaboote.packages."x86_64-linux".lzbt;
   flake.packages."x86_64-linux".stub = inputs.lanzaboote.packages."x86_64-linux".stub;
+  flake.packages."x86_64-linux".linux-cachyos-latest = inputs.nix-cachyos-kernel.packages."x86_64-linux".linux-cachyos-latest;
 
   flake.packages."aarch64-linux".linux_rpi5 =
     inputs.nixos-raspberrypi.packages."aarch64-linux".linux_rpi5;
