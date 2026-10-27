@@ -12,10 +12,11 @@
 
     programs = {
       niri.enable = true;
+      seahorse.enable = true;
     };
 
     services = {
-      gnome.gnome-keyring.enable = false;
+      gnome.gnome-keyring.enable = true;
       geoclue2.enable = true;
     };
 

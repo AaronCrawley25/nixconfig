@@ -139,6 +139,7 @@
             # offset_x = 16;
             offset_y = 16;
             follow_focused_output = true;
+            width = 450;
           };
 
           wallpaper.directory = "~/Pictures/Wallpapers";

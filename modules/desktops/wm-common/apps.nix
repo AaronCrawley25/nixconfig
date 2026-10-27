@@ -8,6 +8,7 @@
       file-roller
       eog
       gnome-network-displays
+      gnome-disk-utility
     ];
   };
 }
