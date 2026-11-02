@@ -34,9 +34,11 @@
             background-color = "transparent";
             center-focused-column = "never";
             preset-column-widths._children = [
+              { proportion = 0.25; }
               { proportion = 0.33333; }
               { proportion = 0.5; }
               { proportion = 0.66667; }
+              { proportion = 0.75; }
             ];
             default-column-width.proportion = 1.0;
             focus-ring.off = { };
@@ -281,11 +283,12 @@
             "Mod+Comma".set-column-width = "50%";
             "Mod+Shift+Comma".switch-preset-column-width = { };
 
-            "Mod+Ctrl+Shift+R".switch-preset-window-height = { };
-            "Mod+Ctrl+R".reset-window-height = { };
-
             "Mod+M".maximize-column = { };
             "Mod+Shift+M".expand-column-to-available-width = { };
+
+            "Mod+Ctrl+Comma".set-window-height = "50%";
+            "Mod+Ctrl+Shift+Comma".switch-preset-window-height = { };
+            "Mod+Ctrl+M".reset-window-height = { };
 
             "Mod+F".fullscreen-window = { };
             "Mod+Shift+F".toggle-windowed-fullscreen = { };
