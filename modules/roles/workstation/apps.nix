@@ -5,6 +5,7 @@
       spotify
       xdg-user-dirs
       playerctl
+      cava
     ];
 
     environment.sessionVariables.EDITOR = lib.mkOverride 900 "nvim";
