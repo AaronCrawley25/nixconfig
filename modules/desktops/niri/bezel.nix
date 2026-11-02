@@ -33,6 +33,11 @@
                 down = mkCmd "${pkgs.wireplumber}/bin/wpctl set-volume @DEFAULT_SINK@ 5%-";
               };
 
+              left = {
+                up = mkCmd "${pkgs.acpilight}/bin/xbacklight -inc 5 -fps 60";
+                down = mkCmd "${pkgs.acpilight}/bin/xbacklight -dec 5 -fps 60";
+              };
+
               top = {
                 left = mkCmd "${pkgs.playerctl}/bin/playerctl previous";
                 right = mkCmd "${pkgs.playerctl}/bin/playerctl next";

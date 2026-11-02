@@ -171,11 +171,11 @@
 
             "XF86MonBrightnessUp" = {
               _props.allow-when-locked = true;
-              spawn-sh = "noctalia msg brightness-up 5";
+              spawn-sh = "xbacklight -inc 5 -fps 60";
             };
             "XF86MonBrightnessDown" = {
               _props.allow-when-locked = true;
-              spawn-sh = "noctalia msg brightness-down 5";
+              spawn-sh = "xbacklight -dec 5 -fps 60";
             };
 
             "Mod+Tab" = {
