@@ -6,9 +6,13 @@
       gnome-calculator
       snapshot
       file-roller
-      eog
+      loupe
+      showtime
+      decibels
       gnome-network-displays
       gnome-disk-utility
     ];
+
+    services.gvfs.enable = true;
   };
 }
