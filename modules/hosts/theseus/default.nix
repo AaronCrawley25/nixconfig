@@ -6,7 +6,7 @@
     gitemail = "aaron.crawley@outlook.com.au";
     modules = [
       inputs.nixos-hardware.nixosModules.framework-intel-core-ultra-series3
-      self.nixosModules.bootRegular
+      self.nixosModules.bootSecure
       self.nixosModules.workstation
       self.nixosModules.homelab
       self.nixosModules.niri
