@@ -124,7 +124,7 @@
             "Mod+X".spawn-sh = "noctalia msg panel-toggle session";
             "Mod+I".spawn-sh = "noctalia msg panel-toggle control-center";
             "Mod+V".spawn-sh = "noctalia msg panel-toggle clipboard";
-            "Mod+A".spawn-sh = "noctalia msg panel-toggle notification";
+            "Mod+A".spawn-sh = "noctalia msg panel-toggle control-center notifications";
             "Mod+Period".spawn-sh = "noctalia msg panel-toggle launcher '/emo '";
             "Mod+S".spawn-sh = "noctalia msg panel-toggle launcher '/ssh '";
             "Mod+Semicolon".spawn-sh = "noctalia msg panel-toggle noctalia/notes:panel";

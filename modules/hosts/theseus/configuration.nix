@@ -37,7 +37,7 @@
         passwordlessSyncUsers = [ "${username}" ];
       };
 
-      boot.loader.systemd-boot.consoleMode = "auto";
+      boot.loader.systemd-boot.consoleMode = "0";
 
       system.stateVersion = "26.05";
     };
