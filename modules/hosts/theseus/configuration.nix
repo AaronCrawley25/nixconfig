@@ -39,6 +39,15 @@
 
       boot.loader.systemd-boot.consoleMode = "0";
 
+      # Workaround since touchscreen appears to be default
+      home = {
+        services.bezel.config = {
+          device = {
+            path = "PIXA3854:00 093A:1343 Touchpad";
+          };
+        };
+      };
+
       system.stateVersion = "26.05";
     };
 }
