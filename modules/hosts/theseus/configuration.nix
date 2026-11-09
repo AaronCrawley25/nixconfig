@@ -48,6 +48,13 @@
         };
       };
 
+      imports = [ inputs.nix-framework-fingerprint-led-blink.nixosModules.default ];
+      services.framework-fingerprint-led-blink = {
+        enable = true;
+        onSeconds = 0.1;
+        offSeconds = 0.1;
+      };
+
       system.stateVersion = "26.05";
     };
 }

@@ -276,6 +276,27 @@
         "type": "github"
       }
     },
+    "nix-framework-fingerprint-led-blink": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "upstream": "upstream"
+      },
+      "locked": {
+        "lastModified": 1794178089,
+        "narHash": "sha256-3sFpLCmuorjCTruBU1z8YpqCuyqND2UZFKzcmShjK2o=",
+        "owner": "sophronesis",
+        "repo": "nix-framework-fingerprint-led-blink",
+        "rev": "bc3aabfcebdbf774734fdef83b59794b77dbaad8",
+        "type": "github"
+      },
+      "original": {
+        "owner": "sophronesis",
+        "repo": "nix-framework-fingerprint-led-blink",
+        "type": "github"
+      }
+    },
     "nix-github-actions": {
       "inputs": {
         "nixpkgs": [
@@ -626,6 +647,7 @@
         "import-tree": "import-tree",
         "lanzaboote": "lanzaboote",
         "nix-cachyos-kernel": "nix-cachyos-kernel",
+        "nix-framework-fingerprint-led-blink": "nix-framework-fingerprint-led-blink",
         "nix-github-actions": "nix-github-actions",
         "nixos-hardware": "nixos-hardware",
         "nixos-raspberrypi": "nixos-raspberrypi",
@@ -691,6 +713,22 @@
         "owner": "nix-systems",
         "ref": "future-26.11",
         "repo": "default",
+        "type": "github"
+      }
+    },
+    "upstream": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1794172898,
+        "narHash": "sha256-aDVxv33q+BPH1YR39QSuD7xCWKxBz3uJ9miGwPW1/Lk=",
+        "owner": "alejandroqh",
+        "repo": "framework-fingerprint-led-blink",
+        "rev": "d7b2f469251bd9f20a814a0116ae6e9e93ed3e76",
+        "type": "github"
+      },
+      "original": {
+        "owner": "alejandroqh",
+        "repo": "framework-fingerprint-led-blink",
         "type": "github"
       }
     }

@@ -43,6 +43,11 @@
 
     nixos-raspberrypi.url = "github:nvmd/nixos-raspberrypi/nixos-unstable";
 
+    nix-framework-fingerprint-led-blink = {
+      url = "github:sophronesis/nix-framework-fingerprint-led-blink";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     nix-github-actions = {
       url = "github:nix-community/nix-github-actions";
       inputs.nixpkgs.follows = "nixpkgs";
