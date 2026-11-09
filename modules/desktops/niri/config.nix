@@ -106,6 +106,26 @@
                 open-on-workspace = "spotify";
               };
             }
+            {
+              window-rule = {
+                match._props.app-id = "org.kde.kdeconnect.daemon";
+                open-floating = true;
+                open-fullscreen = false;
+                default-floating-position._props = {
+                  x = 0;
+                  y = 0;
+                  relative-to = "top-left";
+                };
+                default-column-width.proportion = 1.0;
+                default-window-height.proportion = 1.0;
+                tiled-state = true;
+                focus-ring.off = { };
+                border.off = { };
+                shadow.off = { };
+                draw-border-with-background = false;
+                background-effect.blur = false;
+              };
+            }
             # wallpaper in overview backdrop
             {
               layer-rule = {
