@@ -24,6 +24,7 @@
                 "gtk3"
                 "gtk4"
                 "qt"
+                "kcolorscheme"
                 "btop"
                 "cava"
               ];

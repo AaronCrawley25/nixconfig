@@ -31,7 +31,7 @@
             package = pkgs.gnome-themes-extra;
           };
           font = {
-            name = "CaskaydiaCove NFM";
+            name = "CaskaydiaCove NF";
             size = 11;
           };
           iconTheme = {
@@ -51,8 +51,23 @@
 
         qt = {
           enable = true;
-          platformTheme.name = "adwaita";
+          platformTheme.name = "qtct";
           style.name = "adwaita-dark";
+
+          qt6ctSettings = {
+            Appearance = {
+              style = "Adwaita-Dark";
+              icon_theme = "Adwaita";
+              custom_palette = true;
+              color_scheme_path = "${
+                config.home-manager.users.${username}.xdg.configHome
+              }/qt6ct/colors/noctalia.conf";
+            };
+            Fonts = {
+              fixed = "\"CaskaydiaCove NFM,11\"";
+              general = "\"CaskaydiaCove NF,11\"";
+            };
+          };
         };
       };
 
