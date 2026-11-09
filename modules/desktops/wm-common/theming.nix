@@ -11,7 +11,13 @@
       environment.systemPackages = with pkgs; [
         adwaita-icon-theme
         papirus-icon-theme
-        papirus-folders
+        (pkgs.papirus-folders.overrideAttrs (old: {
+          nativeBuildInputs = (old.nativeBuildInputs or [ ]) ++ [ pkgs.makeWrapper ];
+          postFixup = (old.postFixup or "") + ''
+            wrapProgram $out/bin/papirus-folders \
+              --prefix PATH : ${pkgs.lib.makeBinPath [ pkgs.gtk3 ]}
+          '';
+        }))
         # gnome-icon-theme
       ];
 
