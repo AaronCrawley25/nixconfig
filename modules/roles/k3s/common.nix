@@ -9,7 +9,7 @@
     {
       services.k3s = {
         enable = true;
-        package = pkgs.k3s_1_35;
+        package = pkgs.k3s_1_36;
       };
 
       networking.firewall.allowedTCPPorts = [
