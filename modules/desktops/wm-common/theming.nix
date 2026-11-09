@@ -10,8 +10,12 @@
     {
       environment.systemPackages = with pkgs; [
         adwaita-icon-theme
+        papirus-icon-theme
+        papirus-folders
         # gnome-icon-theme
       ];
+
+      gtk.iconCache.enable = true;
 
       home = {
         dconf.settings = {
@@ -35,7 +39,7 @@
             size = 11;
           };
           iconTheme = {
-            name = "Adwaita";
+            name = "Papirus";
           };
           gtk3.extraConfig = {
             gtk-application-prefer-dark-theme = true;
@@ -57,7 +61,7 @@
           qt6ctSettings = {
             Appearance = {
               style = "Adwaita-Dark";
-              icon_theme = "Adwaita";
+              icon_theme = "Papirus";
               custom_palette = true;
               color_scheme_path = "${
                 config.home-manager.users.${username}.xdg.configHome

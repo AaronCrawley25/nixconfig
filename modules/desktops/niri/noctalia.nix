@@ -28,6 +28,11 @@
                 "btop"
                 "cava"
               ];
+
+              enable_community_templates = true;
+              community_ids = [
+                "papirus-icons"
+              ];
             };
           };
 
