@@ -2,10 +2,28 @@
   flake.nixosModules.workstation = { pkgs, lib, ... }: {
     environment.systemPackages = with pkgs; [
       kitty
+
+      (pkgs.writeShellApplication {
+        name = "katty";
+        text = ''
+          [ "$1" = "-e" ] && shift
+
+          case "$1" in
+              sh|bash|zsh|dash|*/sh|*/bash|*/zsh|*/dash)
+                  case "$2" in
+                      -*c*) cmd=''${3%% *} ;;
+                      *)    cmd=$1 ;;
+                  esac ;;
+              *)  cmd=$1 ;;
+          esac
+
+          exec kitty --app-id="$(basename "$cmd")" "$@"
+        '';
+      })
     ];
 
     environment.sessionVariables = {
-      TERMINAL = "kitty";
+      TERMINAL = "katty";
     };
 
     home = {
