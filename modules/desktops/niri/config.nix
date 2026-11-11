@@ -168,7 +168,7 @@
               "-w"
             ];
             "Mod+N".spawn = [
-              "kitty"
+              "katty"
               "nvim"
             ];
 
