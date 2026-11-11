@@ -99,11 +99,23 @@
                 };
               };
             }
-            { workspace._args = [ "spotify" ]; }
+            { workspace._args = [ "background" ]; }
             {
               window-rule = {
                 match._props.app-id = "^Spotify$";
-                open-on-workspace = "spotify";
+                open-on-workspace = "background";
+              };
+            }
+            {
+              window-rule = {
+                match._props.app-id = "^bitwarden$";
+                open-on-workspace = "background";
+              };
+            }
+            {
+              window-rule = {
+                match._props.app-id = "^discord$";
+                open-on-workspace = "background";
               };
             }
             {
@@ -151,7 +163,10 @@
             "Mod+Slash".spawn-sh = "noctalia msg panel-toggle launcher /";
             "Mod+W".spawn-sh = "noctalia msg panel-toggle wallpaper";
             "Mod+Shift+W".spawn-sh = "noctalia msg panel-toggle noctalia/wallhaven:browser";
-            "Mod+E".spawn = [ "nautilus" ];
+            "Mod+E".spawn = [
+              "nautilus"
+              "-w"
+            ];
             "Mod+N".spawn = [
               "kitty"
               "nvim"

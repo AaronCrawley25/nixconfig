@@ -6,6 +6,7 @@
       xdg-user-dirs
       playerctl
       cava
+      bitwarden-desktop
     ];
 
     environment.sessionVariables.EDITOR = lib.mkOverride 900 "nvim";
