@@ -6,6 +6,18 @@
 {
   flake.nixosModules.base =
     { pkgs, ... }:
+    let
+      oopdate = pkgs.writeShellApplication {
+        name = "oopdate";
+
+        runtimeInputs = with pkgs; [
+          gum
+        ];
+
+        text = builtins.readFile ./oopdate.sh;
+      };
+
+    in
     {
       environment.systemPackages = with pkgs; [
         lsof
@@ -22,24 +34,17 @@
         btop
         nix-tree
         tldr
+        jq
 
         (pkgs.writeShellScriptBin "trim-generations" (builtins.readFile ./trim-generations.sh))
 
-        (pkgs.writeShellApplication {
-          name = "oopdate";
-
-          runtimeInputs = with pkgs; [
-            gum
-          ];
-
-          text = builtins.readFile ./oopdate.sh;
-        })
+        oopdate
       ];
 
       home = {
         xdg.desktopEntries.oopdate = {
           name = "oopdate";
-          exec = "oopdate";
+          exec = "${oopdate}/bin/oopdate";
           terminal = true;
           type = "Application";
           categories = [ "Utility" ];
