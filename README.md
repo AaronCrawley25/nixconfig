@@ -126,7 +126,15 @@ Next we generate the hardware config.
 nixos-generate-config --show-hardware-config --root /mnt > hardware-gen.nix
 ```
 
-Put the output from that file inside the `hardware.nix` file
+Put the output from that file inside the `hardware.nix` file and make the
+following changes:
+
+- Replace the import scan not detected block with
+  `hardware.enableRedistributableFirmware = lib.mkDefault true;`
+- Change references to device uuids to "by-label" paths
+- If using LUKS, add `cryptd` to `boot.initrd.kernelModules`
+- If using LUKS, add cryptroot as LUKS device:
+  `boot.initrd.luks.devices."cryptroot".device = "/dev/disk/by-label/NIXLUKS";`
 
 ### Install Time!
 
@@ -150,15 +158,8 @@ reboot
 ### Enabling Secure Boot
 
 Boot the device into secure boot setup mode. Then, change the boot regular role
-to boot secure and rebuild. Then add the keys:
-
-```sh
-# Enrol
-sudo sbctl enroll-keys --microsoft
-
-# Confirm
-bootctl status
-```
+to boot secure and rebuild. This will automatically generate and enroll the
+secure boot keys, then reboot the system.
 
 ### Putting LUKS keys in TPM
 
