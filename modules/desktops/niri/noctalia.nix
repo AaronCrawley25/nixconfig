@@ -41,6 +41,7 @@
             polkit_agent = true;
             niri_overview_type_to_launch_enabled = true;
             greeter_sync.auto_sync = true;
+            launch_apps_as_systemd_services = true;
 
             launcher = {
               compact = true;
