@@ -163,6 +163,8 @@
             "Mod+Slash".spawn-sh = "noctalia msg panel-toggle launcher /";
             "Mod+W".spawn-sh = "noctalia msg panel-toggle wallpaper";
             "Mod+Shift+W".spawn-sh = "noctalia msg panel-toggle noctalia/wallhaven:browser";
+            "Mod+P".spawn = [ "wdisplays" ];
+
             "Mod+E".spawn = [
               "nautilus"
               "-w"
@@ -214,6 +216,8 @@
               _props.allow-when-locked = true;
               spawn-sh = "xbacklight -dec 5 -fps 60";
             };
+
+            "XF86AudioMedia".spawn = [ "spotify" ];
 
             "Mod+Tab" = {
               _props.repeat = false;
