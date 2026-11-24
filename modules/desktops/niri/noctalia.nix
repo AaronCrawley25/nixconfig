@@ -9,6 +9,15 @@
       programs.noctalia = {
         enable = true;
         systemd.enable = true;
+        extraPackages = with pkgs; [
+          (python3.withPackages (
+            ps: with ps; [
+              numpy
+              onnxruntime
+              pillow
+            ]
+          ))
+        ];
 
         settings = {
           theme = {
@@ -209,6 +218,8 @@
               "noctalia/wallhaven"
               "noctalia/timer"
               "noctalia/kaomoji"
+              "noctalia/wallpaper_depth"
+              "noctalia/lyrics"
             ];
           };
         };
