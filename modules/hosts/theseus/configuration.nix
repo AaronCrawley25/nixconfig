@@ -46,6 +46,12 @@
             path = "PIXA3854:00 093A:1343 Touchpad";
           };
         };
+
+        services.easyeffects = {
+          enable = true;
+          extraPresets.framework-speakers = builtins.fromJSON (builtins.readFile ./easyeffects.json);
+          preset.output = "framework-speakers";
+        };
       };
 
       imports = [ inputs.nix-framework-fingerprint-led-blink.nixosModules.default ];
